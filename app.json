@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "Wine Atlas",
+    "slug": "wine-atlas",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#722F37"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourname.wineatlas"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#722F37"
+      },
+      "package": "com.yourname.wineatlas",
+      "config": {
+        "googleMaps": {
+          "apiKey": "YOUR_GOOGLE_MAPS_API_KEY_HERE"
+        }
+      }
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Wine Atlas to access your photos to attach wine label images."
+        }
+      ],
+      "expo-asset",
+      "expo-font"
+    ],
+    "scheme": "wine-atlas",
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

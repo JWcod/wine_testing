@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Bordeaux",
+    "country": "France",
+    "latitude": 44.8378,
+    "longitude": -0.5792,
+    "description": "Bordeaux is the world's largest fine wine region, stretching across 120,000 hectares along the Gironde estuary in south-western France. Famous for Cabernet Sauvignon-dominant blends on the Left Bank and Merlot-dominant blends on the Right Bank.",
+    "history": "Wine has been produced in Bordeaux since the 1st century AD, when the Romans introduced viticulture. The region rose to international prominence after the marriage of Eleanor of Aquitaine to Henry II of England in 1152, opening up the English market. The 1855 Classification of Médoc châteaux remains the benchmark quality hierarchy today.",
+    "climate": "Oceanic, moderated by the Atlantic. Mild winters, warm summers with significant rainfall. The Gironde and its tributaries create microclimates that protect against frost and rot.",
+    "soil": "Left Bank: deep gravelly soils over clay and limestone, ideal for Cabernet Sauvignon. Right Bank (Saint-Émilion, Pomerol): clay and limestone soils suited to Merlot.",
+    "characteristics": ["Full-bodied", "Tannic", "Age-worthy", "Complex", "Earthy"],
+    "famous_grapes": ["Cabernet Sauvignon", "Merlot", "Cabernet Franc", "Petit Verdot", "Sauvignon Blanc", "Sémillon"]
+  },
+  {
+    "name": "Burgundy",
+    "country": "France",
+    "latitude": 47.0533,
+    "longitude": 4.8347,
+    "description": "Burgundy (Bourgogne) is one of the world's most prestigious wine regions, stretching south from Dijon to Lyon. It is the global benchmark for Pinot Noir and Chardonnay, with an intricate system of named vineyards (climat) recognised as UNESCO World Heritage.",
+    "history": "Cistercian monks in the Middle Ages were instrumental in mapping and cultivating Burgundy's vineyards, identifying the best parcels — a tradition that led to the modern classification of Grand Cru, Premier Cru, Villages, and Régionale appellations. Napoleon's inheritance laws, which mandated equal division among heirs, fragmented ownership into the tiny parcels that define Burgundy today.",
+    "climate": "Semi-continental with cold winters and warm summers. Frost is a constant threat in spring. Significant vintage variation makes winemaker skill and vineyard site paramount.",
+    "soil": "Limestone and clay-rich soils (Kimmeridgian limestone in Chablis, Jurassic limestone on the Côte d'Or). The precise combination of soil, subsoil, and slope defines each climat.",
+    "characteristics": ["Elegant", "Terroir-expressive", "Silky tannins", "High acidity", "Age-worthy"],
+    "famous_grapes": ["Pinot Noir", "Chardonnay", "Gamay", "Aligoté"]
+  },
+  {
+    "name": "Napa Valley",
+    "country": "United States",
+    "latitude": 38.5025,
+    "longitude": -122.2654,
+    "description": "Napa Valley, in northern California, is the United States' most celebrated wine region. Spanning only 30 miles long and 5 miles wide, it produces world-class Cabernet Sauvignon that competes with Bordeaux's finest, as demonstrated by the 1976 Judgment of Paris.",
+    "history": "Commercial winemaking in Napa began in the 1860s, but Prohibition (1920–1933) devastated the industry. The modern era began in the 1960s–70s with pioneers like Robert Mondavi. The 1976 Judgment of Paris, where Napa wines blind-tasted above French wines, catapulted the valley to international fame.",
+    "climate": "Mediterranean — warm, dry summers and cool nights. Fog from San Pablo Bay flows through the southern valley each morning, cooling vines and preserving acidity. The northern valley (Calistoga) is significantly warmer.",
+    "soil": "Highly varied: volcanic soils on Howell Mountain and Spring Mountain, alluvial gravels on the valley floor, and clay-rich benchlands in Oakville and Rutherford.",
+    "characteristics": ["Full-bodied", "Rich", "Opulent", "High alcohol", "Ripe fruit", "Structured tannins"],
+    "famous_grapes": ["Cabernet Sauvignon", "Merlot", "Cabernet Franc", "Chardonnay", "Sauvignon Blanc", "Zinfandel"]
+  },
+  {
+    "name": "Tuscany",
+    "country": "Italy",
+    "latitude": 43.7711,
+    "longitude": 11.2486,
+    "description": "Tuscany is Italy's most internationally recognised wine region, home to Chianti Classico, Brunello di Montalcino, and the Supertuscans. The landscape of rolling hills, cypress trees, and Renaissance towns is as iconic as the wines themselves.",
+    "history": "Tuscany has produced wine since Etruscan times. The Chianti region was formally delineated in the 18th century by Cosimo III de' Medici. The 'Supertuscan' revolution of the 1970s-80s, led by producers like Sassicaia and Antinori, broke IGT rules to blend Cabernet Sauvignon with Sangiovese, creating wines that rivalled Bordeaux.",
+    "climate": "Mediterranean with hot, dry summers and mild winters. Higher altitude areas (Montalcino at 500m+, Chianti Classico hills) benefit from cooler nights that preserve acidity.",
+    "soil": "Galestro (friable limestone-clay schist) and alberese (compact clay-rich limestone) in Chianti Classico. Sandy clay soils in Bolgheri (Supertuscan coast).",
+    "characteristics": ["Earthy", "High acidity", "Firm tannins", "Cherry-driven", "Food-friendly"],
+    "famous_grapes": ["Sangiovese", "Cabernet Sauvignon", "Merlot", "Vernaccia", "Trebbiano"]
+  },
+  {
+    "name": "Champagne",
+    "country": "France",
+    "latitude": 49.0440,
+    "longitude": 4.0241,
+    "description": "Champagne, in north-eastern France, is the world's most famous sparkling wine region. The méthode champenoise (traditional method) creates the characteristic bubbles through secondary fermentation in the bottle. Champagne is the wine of celebration, synonymous with luxury and craftsmanship.",
+    "history": "Although Dom Pérignon (1638–1715) is often credited with 'inventing' Champagne, bubbles were likely a happy accident. The English were among the first to appreciate effervescent Champagne in the late 17th century. The great Champagne houses (Moët, Veuve Clicquot, Krug) were established in the 18th–19th centuries and built the global reputation the region enjoys today.",
+    "climate": "Cool continental — one of France's northernmost wine regions. Cold winters and cool, variable summers make viticulture marginal, creating wines with high natural acidity perfectly suited to sparkling wine production.",
+    "soil": "Chalk subsoil — a defining feature of Champagne. Chalk retains moisture during dry summers, regulates temperature, and imparts the distinctive minerality and finesse that defines great Champagne.",
+    "characteristics": ["High acidity", "Fine bubbles", "Toasty", "Brioche", "Citrus", "Mineral", "Elegant"],
+    "famous_grapes": ["Chardonnay", "Pinot Noir", "Pinot Meunier"]
+  }
+]

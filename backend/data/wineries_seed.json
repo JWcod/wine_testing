@@ -1,0 +1,167 @@
+[
+  {
+    "name": "Château Margaux",
+    "region_name": "Bordeaux",
+    "country": "France",
+    "latitude": 45.0392,
+    "longitude": -0.6756,
+    "description": "Château Margaux is a Premier Grand Cru Classé estate in the Margaux appellation, producing one of the most celebrated wines in the world. The grand château building, designed in the Palladian style, is as iconic as the wine itself.",
+    "history": "The estate's history stretches back to the 12th century. It was classified as a First Growth in the historic 1855 Bordeaux Classification. André Mentzelopoulos purchased the estate in 1977 and invested heavily in its revival, cementing its status as one of Bordeaux's finest.",
+    "specialties": ["Château Margaux (Grand Vin)", "Pavillon Rouge du Château Margaux", "Pavillon Blanc du Château Margaux"],
+    "official_website": "https://www.chateau-margaux.com"
+  },
+  {
+    "name": "Château Pétrus",
+    "region_name": "Bordeaux",
+    "country": "France",
+    "latitude": 44.9254,
+    "longitude": -0.1777,
+    "description": "Pétrus is the most prestigious estate in Pomerol, producing one of the most expensive and sought-after wines in the world. The property is tiny — just 11.5 hectares — and planted almost entirely with Merlot on a unique clay plateau.",
+    "history": "Pétrus rose to prominence after World War II, championed by négociant Jean-Pierre Moueix. Its wines became the drink of royalty and heads of state. The rare 'buttonhole' of blue clay in the centre of the estate is believed to be a key factor in the wine's extraordinary richness.",
+    "specialties": ["Pétrus (100% Merlot)"],
+    "official_website": null
+  },
+  {
+    "name": "Château Léoville-Las Cases",
+    "region_name": "Bordeaux",
+    "country": "France",
+    "latitude": 45.1597,
+    "longitude": -0.7614,
+    "description": "A Second Growth estate in Saint-Julien known for producing wines of First Growth quality, often described as the 'super-second' of the Médoc. The estate borders Château Latour and shares similarly deep gravelly soils.",
+    "history": "The Léoville estate was the largest in the Médoc before the French Revolution divided it into three properties. Las Cases has been owned by the Delon family since 1900, and under Jean-Hubert Delon's direction became one of Bordeaux's most sought-after wines.",
+    "specialties": ["Le Grand Clos de Léoville Las Cases", "Clos du Marquis", "Le Petit Lion"],
+    "official_website": "https://www.leoville-las-cases.com"
+  },
+  {
+    "name": "Domaine de la Romanée-Conti",
+    "region_name": "Burgundy",
+    "country": "France",
+    "latitude": 47.1727,
+    "longitude": 4.9512,
+    "description": "Domaine de la Romanée-Conti (DRC) is widely regarded as the greatest wine estate in the world. Its monopole Grand Cru vineyard, Romanée-Conti, produces only ~450–600 cases per year and commands prices in the tens of thousands of dollars per bottle.",
+    "history": "The Romanée-Conti vineyard was famously owned by the Prince of Conti in the 18th century. The Villaine and Leroy families have jointly managed the domaine since 1942. DRC farms biodynamically and never chaptalisises, treating each parcel with extreme care.",
+    "specialties": ["Romanée-Conti Grand Cru", "La Tâche Grand Cru", "Richebourg Grand Cru", "Échézeaux Grand Cru", "Montrachet Grand Cru"],
+    "official_website": null
+  },
+  {
+    "name": "Domaine Leflaive",
+    "region_name": "Burgundy",
+    "country": "France",
+    "latitude": 46.9889,
+    "longitude": 4.7736,
+    "description": "Domaine Leflaive in Puligny-Montrachet is the reference point for white Burgundy. The domaine converted to biodynamic viticulture in 1997 under Anne-Claude Leflaive, producing Chardonnays of extraordinary purity and longevity.",
+    "history": "Founded in 1905 by Joseph Leflaive, the domaine remained in family hands and expanded its Grand Cru holdings over the 20th century. Anne-Claude Leflaive's switch to biodynamics was controversial at the time but is now widely credited with elevating the quality of the wines.",
+    "specialties": ["Bâtard-Montrachet Grand Cru", "Chevalier-Montrachet Grand Cru", "Puligny-Montrachet Premier Cru Les Pucelles"],
+    "official_website": "https://www.leflaive.fr"
+  },
+  {
+    "name": "Domaine Armand Rousseau",
+    "region_name": "Burgundy",
+    "country": "France",
+    "latitude": 47.2195,
+    "longitude": 4.9596,
+    "description": "Domaine Armand Rousseau is the definitive producer of Gevrey-Chambertin, owning extensive parcels across the village's Grand Cru vineyards. The wines are models of Pinot Noir power combined with Burgundian elegance.",
+    "history": "Founded by Armand Rousseau in the early 20th century, the domaine was among the first in Burgundy to estate-bottle rather than sell to négociants. Charles Rousseau expanded the domaine's reputation through decades of consistent winemaking.",
+    "specialties": ["Chambertin Grand Cru", "Chambertin Clos de Bèze Grand Cru", "Gevrey-Chambertin Clos Saint-Jacques Premier Cru"],
+    "official_website": null
+  },
+  {
+    "name": "Opus One Winery",
+    "region_name": "Napa Valley",
+    "country": "United States",
+    "latitude": 38.4406,
+    "longitude": -122.4086,
+    "description": "Opus One is a joint venture between Robert Mondavi and Baron Philippe de Rothschild of Château Mouton Rothschild, producing a single Bordeaux-blend wine that symbolises the partnership between California and France.",
+    "history": "Founded in 1979 following a handshake agreement between Robert Mondavi and Baron Philippe de Rothschild at a dinner in Hawaii. The first commercial vintage was 1979. The dramatic modernist winery building opened in 1991 and has become a Napa landmark.",
+    "specialties": ["Opus One (Bordeaux blend)"],
+    "official_website": "https://www.opusonewinery.com"
+  },
+  {
+    "name": "Screaming Eagle",
+    "region_name": "Napa Valley",
+    "country": "United States",
+    "latitude": 38.4027,
+    "longitude": -122.3661,
+    "description": "Screaming Eagle is one of Napa's 'cult wines', producing a tiny quantity of Cabernet Sauvignon from a 57-acre estate in Oakville. The 1992 vintage sold at auction for $500,000 for a single bottle, cementing its legendary status.",
+    "history": "Founded in 1986 by Jean Phillips, a Napa real estate agent. The property was sold in 2006 to Stan Kroenke. Despite changing ownership, the wine maintains its cult status with a mailing list that is essentially impossible to join.",
+    "specialties": ["Screaming Eagle Cabernet Sauvignon", "Eolos (second wine)"],
+    "official_website": null
+  },
+  {
+    "name": "Stag's Leap Wine Cellars",
+    "region_name": "Napa Valley",
+    "country": "United States",
+    "latitude": 38.4034,
+    "longitude": -122.3426,
+    "description": "Stag's Leap Wine Cellars became world-famous when its 1973 Cabernet Sauvignon won the red wine category at the 1976 Judgment of Paris, beating Bordeaux First Growths in a blind tasting.",
+    "history": "Founded by Warren Winiarski in 1970. The Stags Leap District, named for the rocky palisades where deer jump across the cliffs, produces wines known for their elegance and approachability relative to other Napa Cabs.",
+    "specialties": ["S.L.V. Cabernet Sauvignon", "Cask 23 Cabernet Sauvignon", "Artemis Cabernet Sauvignon"],
+    "official_website": "https://www.stagsleapwinecellars.com"
+  },
+  {
+    "name": "Antinori",
+    "region_name": "Tuscany",
+    "country": "Italy",
+    "latitude": 43.5525,
+    "longitude": 11.1491,
+    "description": "Marchesi Antinori is one of Italy's oldest wine dynasties, with over 600 years of continuous winemaking in Tuscany. The family pioneered the Supertuscan movement and owns estates across multiple Italian regions.",
+    "history": "The Antinori family has been making wine in Florence since 1385. In the 1970s, Piero Antinori created Tignanello — the first Supertuscan — by blending Sangiovese with Cabernet Sauvignon in Bordeaux bariques, breaking DOC rules and reshaping Italian wine.",
+    "specialties": ["Tignanello", "Solaia", "Badia a Passignano Chianti Classico Gran Selezione"],
+    "official_website": "https://www.antinori.it"
+  },
+  {
+    "name": "Sassicaia — Tenuta San Guido",
+    "region_name": "Tuscany",
+    "country": "Italy",
+    "latitude": 43.0580,
+    "longitude": 10.7249,
+    "description": "Sassicaia, produced by Tenuta San Guido in Bolgheri, is the wine that started the Supertuscan revolution. A pure Cabernet Sauvignon-Cabernet Franc blend, it earned its own DOC (Bolgheri Sassicaia DOC) in 1994 — the only single-estate DOC in Italy.",
+    "history": "Created by Marchese Mario Incisa della Rocchetta in the 1940s for personal consumption, using Cabernet Sauvignon cuttings from Château Lafite. It was first released commercially in 1968 and scored 100 points from Wine Spectator for the 1985 vintage.",
+    "specialties": ["Sassicaia", "Guidalberto (second wine)"],
+    "official_website": "https://www.sassicaia.com"
+  },
+  {
+    "name": "Biondi-Santi",
+    "region_name": "Tuscany",
+    "country": "Italy",
+    "latitude": 43.0547,
+    "longitude": 11.4915,
+    "description": "Biondi-Santi is the founding estate of Brunello di Montalcino, the iconic long-lived red wine made entirely from Sangiovese Grosso (locally called Brunello). The estate's Riserva wines are among the most age-worthy in Italy.",
+    "history": "Ferruccio Biondi-Santi effectively created the Brunello di Montalcino category in the late 19th century by isolating a superior clone of Sangiovese. The estate held auctions of library vintages dating back to 1888, demonstrating the extraordinary longevity of the wine.",
+    "specialties": ["Brunello di Montalcino Riserva", "Brunello di Montalcino Annata", "Rosso di Montalcino"],
+    "official_website": "https://www.biondisanti.it"
+  },
+  {
+    "name": "Moët & Chandon",
+    "region_name": "Champagne",
+    "country": "France",
+    "latitude": 48.9984,
+    "longitude": 3.9647,
+    "description": "Moët & Chandon, headquartered in Épernay, is the world's largest Champagne producer, owning the most extensive vineyard holdings in the region. Its prestige cuvée Dom Pérignon is one of the most recognised wine labels globally.",
+    "history": "Founded in 1743 by Claude Moët, the house was later acquired by Pierre-Gabriel Chandon in 1832. Napoleon Bonaparte was a close friend of Jean-Rémy Moët and visited the estate multiple times. Today Moët is part of LVMH.",
+    "specialties": ["Dom Pérignon", "Moët & Chandon Impérial Brut", "Moët & Chandon Grand Vintage"],
+    "official_website": "https://www.moet.com"
+  },
+  {
+    "name": "Krug",
+    "region_name": "Champagne",
+    "country": "France",
+    "latitude": 49.0380,
+    "longitude": 3.9756,
+    "description": "Krug is widely considered the pinnacle of the Champagne house style, known for its multi-vintage Grande Cuvée, exceptional use of oak fermentation, and uncompromising approach to complexity and age-worthiness.",
+    "history": "Founded by Johann-Joseph Krug in 1843, the house has been owned by LVMH since 1999 but retains its artisanal ethos under the Krug family's continued involvement. Each Krug Champagne is built for decades of cellaring.",
+    "specialties": ["Krug Grande Cuvée", "Krug Clos du Mesnil (Blanc de Blancs)", "Krug Vintage"],
+    "official_website": "https://www.krug.com"
+  },
+  {
+    "name": "Veuve Clicquot",
+    "region_name": "Champagne",
+    "country": "France",
+    "latitude": 49.0453,
+    "longitude": 3.9892,
+    "description": "Veuve Clicquot is one of the great Champagne houses, famous for its Yellow Label Brut and the innovations of Barbe-Nicole Ponsardin ('the Widow Clicquot') who invented the riddling table (remuage) to clarify sparkling wine.",
+    "history": "Founded in 1772 by Philippe Clicquot, the house took its current name after his son died and his widow Barbe-Nicole took control at age 27. She transformed Champagne production and expanded the house across Europe, famously shipping wine to Russia through the 1814 blockade.",
+    "specialties": ["Yellow Label Brut", "La Grande Dame Vintage", "Rosé Champagne"],
+    "official_website": "https://www.veuve-clicquot.com"
+  }
+]
