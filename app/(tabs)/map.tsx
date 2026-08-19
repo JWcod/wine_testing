@@ -47,7 +47,7 @@ export default function MapScreen() {
   const db = useSQLiteContext();
   const { wines, loadWines } = useWineStore();
   const insets = useSafeAreaInsets();
-  const [country, setCountry] = useState<Country>('france');
+  const [country, setCountry] = useState<Country>('argentina');
 
   useEffect(() => { loadWines(db); }, []);
 
