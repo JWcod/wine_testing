@@ -9,6 +9,33 @@ const OUTLINE = 'M124.0,16.0 L124.5,32.9 L152.3,43.1 L152.0,58.6 L179.9,50.4 L19
 
 const REGION_PATH = "M43.0,245.8 L43.4,245.6 L43.8,245.3 L44.2,245.0 L48.9,241.1 L49.3,240.8 L49.6,240.4 L49.9,239.9 L52.9,235.1 L53.2,234.7 L53.4,234.3 L53.5,233.8 L53.6,233.3 L53.7,232.8 L53.7,232.3 L53.6,229.6 L56.5,227.2 L63.1,222.0 L63.5,221.7 L63.8,221.3 L64.1,221.0 L64.4,220.5 L64.6,220.1 L64.8,219.6 L64.9,219.2 L65.0,218.7 L65.0,218.2 L65.0,217.7 L64.9,217.2 L64.8,216.7 L64.7,216.3 L64.5,215.8 L64.2,215.4 L63.9,215.0 L63.6,214.6 L63.2,214.3 L62.9,214.0 L62.4,213.7 L62.0,213.5 L61.5,213.3 L61.1,213.2 L60.6,213.1 L60.1,213.1 L59.6,213.1 L59.1,213.2 L58.6,213.3 L58.2,213.4 L57.7,213.6 L57.3,213.9 L56.9,214.2 L50.3,219.4 L50.2,219.4 L45.3,223.4 L45.0,223.8 L44.6,224.2 L44.3,224.6 L44.1,225.0 L43.8,225.5 L43.7,226.0 L43.6,226.5 L43.5,227.0 L43.5,227.5 L43.6,231.2 L41.9,234.0 L38.4,236.9 L31.9,239.7 L31.5,239.9 L31.0,240.2 L30.7,240.5 L30.3,240.8 L30.0,241.2 L29.7,241.6 L29.4,242.0 L29.2,242.5 L29.1,242.9 L29.0,243.4 L28.9,243.9 L28.9,244.4 L28.9,244.9 L29.0,245.4 L29.1,245.8 L29.3,246.3 L29.5,246.7 L29.8,247.2 L30.1,247.5 L30.4,247.9 L30.8,248.2 L31.2,248.5 L31.6,248.8 L32.1,249.0 L32.5,249.1 L33.0,249.2 L33.5,249.3 L34.0,249.3 L34.5,249.3 L35.0,249.2 L35.4,249.1 L35.9,248.9 L43.0,245.8 Z";
 
+// Illustrated terrain cues — real Rhine course (Mosel's confluence river) and
+// real mountain ranges flanking the Mosel valley.
+const RIVERS: { name: string; path: string }[] = [
+  { name: 'Rhine', path: 'M45.5,193.5 L62.8,219.0 L80.9,234.1' },
+];
+
+const MOUNTAINS: { name: string; points: [number, number][] }[] = [
+  { name: 'Eifel', points: [[39.8, 227.6]] },
+  { name: 'Hunsrück', points: [[50.6, 244.8]] },
+];
+
+/** A small triangular peak glyph — the classic cartographic "mountain" mark. */
+function MountainPeak({ x, y }: { x: number; y: number }) {
+  const w = 5.5, h = 6;
+  return (
+    <Path
+      d={`M${x - w / 2},${y + h / 2} L${x},${y - h / 2} L${x + w / 2},${y + h / 2} Z`}
+      fill={Colors.textMuted}
+      fillOpacity={0.4}
+      stroke={Colors.textMuted}
+      strokeOpacity={0.5}
+      strokeWidth={0.4}
+      pointerEvents="none"
+    />
+  );
+}
+
 interface Props {
   onSelectRegion: (regionId: string) => void;
 }
@@ -21,6 +48,17 @@ export default function GermanyRegionMap({ onSelectRegion }: Props) {
       <Svg width="100%" height="100%" viewBox="0 0 280 379" preserveAspectRatio="xMidYMid meet">
         <Rect x={0} y={0} width={280} height={379} fill={Colors.cream} />
         <Path d={OUTLINE} fill={Colors.parchment} stroke={Colors.textMuted} strokeWidth={1.5} />
+
+        {/* Terrain — real Rhine course + real mountain range positions */}
+        <Path d={RIVERS[0].path} fill="none" stroke={Colors.riverBlue}
+          strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" opacity={0.75} pointerEvents="none" />
+        {MOUNTAINS.map(range => (
+          <React.Fragment key={range.name}>
+            {range.points.map(([x, y], i) => (
+              <MountainPeak key={`${range.name}-${i}`} x={x} y={y} />
+            ))}
+          </React.Fragment>
+        ))}
 
         <Path
           d={REGION_PATH}

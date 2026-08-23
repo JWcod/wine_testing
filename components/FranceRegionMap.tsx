@@ -53,6 +53,39 @@ const REGIONS: FranceRegion[] = [
   { id: 'rhone-valley', name: 'Rhône Valley', path: PATH_RHONE, color: '#B54B3A', labelX: 227.9, labelY: 227.6 },
 ];
 
+// Illustrated terrain cues — real rivers (not already drawn as a wine-region
+// ribbon) and real mountain range positions, so the map reads as a place with
+// geography rather than flat color blobs. Not literal elevation data (see
+// project notes); rivers are traced through real waypoints, mountain peaks are
+// placed at real range locations.
+const RIVERS: { name: string; path: string }[] = [
+  { name: 'Garonne', path: 'M153.1,264.3 L125.7,244.9 L108.5,224.2 L99.3,206.0' },
+  { name: 'Rhine', path: 'M288.8,136.1 L292.3,103.1 L304.2,88.6' },
+];
+
+const MOUNTAINS: { name: string; points: [number, number][] }[] = [
+  { name: 'Alps', points: [[272.9, 192.1], [264.7, 212.5], [275.7, 248.1]] },
+  { name: 'Pyrenees', points: [[123.5, 293.4], [154.4, 296.7], [110.3, 286.9]] },
+  { name: 'Massif Central', points: [[183.1, 202.8], [194.1, 219.0], [176.5, 231.9]] },
+  { name: 'Vosges', points: [[275.7, 118.7], [278.0, 125.1]] },
+];
+
+/** A small triangular peak glyph — the classic cartographic "mountain" mark. */
+function MountainPeak({ x, y }: { x: number; y: number }) {
+  const w = 5.5, h = 6;
+  return (
+    <Path
+      d={`M${x - w / 2},${y + h / 2} L${x},${y - h / 2} L${x + w / 2},${y + h / 2} Z`}
+      fill={Colors.textMuted}
+      fillOpacity={0.4}
+      stroke={Colors.textMuted}
+      strokeOpacity={0.5}
+      strokeWidth={0.4}
+      pointerEvents="none"
+    />
+  );
+}
+
 interface Props {
   onSelectRegion: (regionId: string) => void;
 }
@@ -76,6 +109,30 @@ export default function FranceRegionMap({ onSelectRegion }: Props) {
 
         {/* Landmass */}
         <Path d={FRANCE_OUTLINE} fill={Colors.parchment} stroke={Colors.textMuted} strokeWidth={1.5} />
+
+        {/* Terrain — real rivers + real mountain range positions, clipped to the coastline */}
+        <G clipPath="url(#franceClip)">
+          {RIVERS.map(river => (
+            <Path
+              key={river.name}
+              d={river.path}
+              fill="none"
+              stroke={Colors.riverBlue}
+              strokeWidth={1.4}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              opacity={0.75}
+              pointerEvents="none"
+            />
+          ))}
+          {MOUNTAINS.map(range => (
+            <React.Fragment key={range.name}>
+              {range.points.map(([x, y], i) => (
+                <MountainPeak key={`${range.name}-${i}`} x={x} y={y} />
+              ))}
+            </React.Fragment>
+          ))}
+        </G>
 
         {/* Region shapes, clipped to the coastline so nothing spills into the sea */}
         <G clipPath="url(#franceClip)">

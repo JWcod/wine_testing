@@ -26,6 +26,35 @@ const PATH_RIBERA = "M129.9,83.7 L130.6,83.7 L131.2,83.6 L131.9,83.4 L132.5,83.2
 // the wine region and the comarca are the same area.
 const PATH_PRIORAT = "M236.7,83.4 L236.7,83.6 L237.1,84.1 L238.0,83.8 L238.1,84.0 L238.0,84.4 L238.7,84.6 L238.8,85.0 L238.7,85.3 L238.9,85.5 L239.2,85.2 L239.4,85.3 L239.4,85.9 L239.5,86.3 L239.5,86.3 L239.4,86.2 L238.8,86.7 L238.3,86.8 L238.1,86.9 L238.2,87.3 L238.3,87.6 L238.4,87.9 L238.2,88.1 L238.0,88.1 L237.5,88.1 L237.4,88.3 L237.4,88.5 L238.0,88.6 L237.9,88.7 L238.0,89.0 L237.7,89.7 L237.7,90.0 L237.5,90.3 L237.4,90.5 L237.1,90.5 L236.9,90.5 L236.4,90.2 L236.3,90.3 L236.4,90.4 L236.5,90.4 L236.7,90.8 L236.4,90.9 L236.3,90.9 L236.2,91.2 L236.3,91.2 L236.3,91.5 L236.1,91.6 L236.1,91.6 L236.1,91.8 L235.8,91.8 L235.7,91.7 L235.5,91.6 L235.4,91.4 L235.1,91.3 L235.0,91.0 L234.9,91.3 L234.7,91.2 L234.6,91.1 L234.4,90.9 L234.3,90.7 L233.8,90.7 L233.9,90.6 L233.7,90.2 L233.6,90.1 L233.6,90.1 L233.5,90.0 L233.4,90.0 L233.4,89.9 L233.5,89.9 L233.5,89.8 L233.1,89.0 L233.1,88.8 L232.7,88.4 L232.7,88.3 L232.9,88.2 L233.2,88.0 L233.3,88.0 L233.3,87.9 L233.7,87.5 L233.3,87.3 L233.3,87.0 L233.2,86.8 L233.4,86.6 L233.5,86.4 L233.6,86.3 L233.6,86.1 L233.5,85.7 L233.6,85.6 L233.7,85.5 L233.8,85.3 L233.9,85.3 L233.9,85.1 L234.2,84.9 L234.7,84.8 L234.7,84.7 L234.7,84.5 L234.9,84.2 L235.5,84.3 L235.6,84.4 L235.8,84.3 L236.0,84.4 L236.1,84.4 L236.4,83.5 L236.7,83.4 Z";
 
+// Illustrated terrain cues — real rivers and real mountain range positions
+// (not literal elevation data; same convention as France/Italy).
+const RIVERS: { name: string; path: string }[] = [
+  { name: 'Ebro', path: 'M150.9,46.5 L161.6,52.7 L194.6,75.3 L224.6,98.4' },
+  { name: 'Duero', path: 'M160.9,72.0 L135.1,75.0 L107.3,79.3 L91.5,79.3' },
+];
+
+const MOUNTAINS: { name: string; points: [number, number][] }[] = [
+  { name: 'Pyrenees', points: [[192.3, 46.2], [219.9, 46.2], [251.7, 48.9]] },
+  { name: 'Cantabrian', points: [[96.7, 37.9], [128.6, 37.9]] },
+  { name: 'Sistema Central', points: [[107.3, 98.8], [139.2, 98.8]] },
+];
+
+/** A small triangular peak glyph — the classic cartographic "mountain" mark. */
+function MountainPeak({ x, y }: { x: number; y: number }) {
+  const w = 5.5, h = 6;
+  return (
+    <Path
+      d={`M${x - w / 2},${y + h / 2} L${x},${y - h / 2} L${x + w / 2},${y + h / 2} Z`}
+      fill={Colors.textMuted}
+      fillOpacity={0.4}
+      stroke={Colors.textMuted}
+      strokeOpacity={0.5}
+      strokeWidth={0.4}
+      pointerEvents="none"
+    />
+  );
+}
+
 export interface SpainRegion {
   id: string;
   name: string;
@@ -61,6 +90,21 @@ export default function SpainRegionMap({ onSelectRegion }: Props) {
 
         <Rect x={0} y={0} width={300} height={260} fill={Colors.cream} />
         <Path d={SPAIN_OUTLINE} fill={Colors.parchment} stroke={Colors.textMuted} strokeWidth={1.5} />
+
+        {/* Terrain — real rivers + real mountain range positions */}
+        <G clipPath="url(#spainClip)">
+          {RIVERS.map(river => (
+            <Path key={river.name} d={river.path} fill="none" stroke={Colors.riverBlue}
+              strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round" opacity={0.75} pointerEvents="none" />
+          ))}
+          {MOUNTAINS.map(range => (
+            <React.Fragment key={range.name}>
+              {range.points.map(([x, y], i) => (
+                <MountainPeak key={`${range.name}-${i}`} x={x} y={y} />
+              ))}
+            </React.Fragment>
+          ))}
+        </G>
 
         <G clipPath="url(#spainClip)">
           {REGIONS.map(region => (

@@ -85,6 +85,37 @@ const REGIONS: ItalyRegionData[] = [
   { id: "sardinia", name: "Sardinia", path: PATH_SARDEGNA, color: "#84B851", grapes: "Cannonau · Vermentino", centerX: 57.5, centerY: 196.7 },
 ];
 
+// Illustrated terrain cues — real rivers and real mountain range positions
+// (not literal elevation data; see project notes for why).
+const RIVERS: { name: string; path: string }[] = [
+  { name: 'Po', path: 'M24.9,79.4 L50.6,68.6 L72.3,68.6 L100.0,71.3 L123.8,74.0' },
+  { name: 'Arno', path: 'M103.0,104.6 L86.2,106.5' },
+  { name: 'Adige', path: 'M100.6,31.2 L98.1,49.6 L109.9,67.2' },
+];
+
+const MOUNTAINS: { name: string; points: [number, number][] }[] = [
+  { name: 'Alps', points: [[28.8, 46.9], [68.4, 36.1], [113.9, 28.0]] },
+  { name: 'Apennines North', points: [[88.2, 92.9], [104.0, 120.0]] },
+  { name: 'Apennines Central', points: [[137.6, 141.7], [149.5, 160.6]] },
+  { name: 'Apennines South', points: [[189.0, 198.6], [202.9, 222.9]] },
+];
+
+/** A small triangular peak glyph — the classic cartographic "mountain" mark. */
+function MountainPeak({ x, y }: { x: number; y: number }) {
+  const w = 5.5, h = 6;
+  return (
+    <Path
+      d={`M${x - w / 2},${y + h / 2} L${x},${y - h / 2} L${x + w / 2},${y + h / 2} Z`}
+      fill={Colors.textMuted}
+      fillOpacity={0.4}
+      stroke={Colors.textMuted}
+      strokeOpacity={0.5}
+      strokeWidth={0.4}
+      pointerEvents="none"
+    />
+  );
+}
+
 interface Props {
   onSelectRegion: (regionId: string) => void;
 }
@@ -123,6 +154,28 @@ export default function ItalyRegionMap({ onSelectRegion }: Props) {
             strokeOpacity={0.25}
             pointerEvents="none"
           />
+        ))}
+
+        {/* Terrain — real rivers + real mountain range positions */}
+        {RIVERS.map(river => (
+          <Path
+            key={river.name}
+            d={river.path}
+            fill="none"
+            stroke={Colors.riverBlue}
+            strokeWidth={1.3}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity={0.75}
+            pointerEvents="none"
+          />
+        ))}
+        {MOUNTAINS.map(range => (
+          <React.Fragment key={range.name}>
+            {range.points.map(([x, y], i) => (
+              <MountainPeak key={`${range.name}-${i}`} x={x} y={y} />
+            ))}
+          </React.Fragment>
         ))}
 
         {/* Highlighted wine regions, real boundaries, tappable */}

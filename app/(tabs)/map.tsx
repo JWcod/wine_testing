@@ -25,12 +25,14 @@ import ArgentinaRegionMap from '../../components/ArgentinaRegionMap';
 import SouthAfricaRegionMap from '../../components/SouthAfricaRegionMap';
 import AustraliaRegionMap from '../../components/AustraliaRegionMap';
 import NewZealandRegionMap from '../../components/NewZealandRegionMap';
+import WineGlobe from '../../components/WineGlobe';
 
 type Country =
-  | 'france' | 'usa' | 'italy' | 'spain'
+  | 'globe' | 'france' | 'usa' | 'italy' | 'spain'
   | 'portugal' | 'germany' | 'argentina' | 'south-africa' | 'australia' | 'new-zealand';
 
 const COUNTRY_TABS: { id: Country; label: string }[] = [
+  { id: 'globe', label: '🌐 World' },
   { id: 'france', label: 'France' },
   { id: 'usa', label: 'USA' },
   { id: 'italy', label: 'Italy' },
@@ -47,7 +49,7 @@ export default function MapScreen() {
   const db = useSQLiteContext();
   const { wines, loadWines } = useWineStore();
   const insets = useSafeAreaInsets();
-  const [country, setCountry] = useState<Country>('argentina');
+  const [country, setCountry] = useState<Country>('globe');
 
   useEffect(() => { loadWines(db); }, []);
 
@@ -64,6 +66,7 @@ export default function MapScreen() {
       <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
 
       {/* Illustrated wine-region map — real boundaries where available, coordinate-anchored approximations elsewhere */}
+      {country === 'globe' && <WineGlobe onSelectRegion={handleSelectRegion} />}
       {country === 'france' && <FranceRegionMap onSelectRegion={handleSelectRegion} />}
       {country === 'usa' && <USWestCoastMap onSelectRegion={handleSelectRegion} />}
       {country === 'italy' && <ItalyRegionMap onSelectRegion={handleSelectRegion} />}

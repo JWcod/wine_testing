@@ -23,6 +23,8 @@ export const Colors = {
   regionMarker: '#7B2D8B',
   wineryMarker: '#B8860B',
   userWineMarker: '#722F37',
+
+  riverBlue: '#8FAFC4',
 };
 
 export const wineTypeColor: Record<WineType, string> = {
